@@ -260,7 +260,6 @@ runs:
     - name: Get release tag
       id: get_release_tag
       shell: bash
-      working-directory: digger-action-repo
       run: |
         # Fetch tags
         git fetch --prune --unshallow --tags
