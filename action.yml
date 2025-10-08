@@ -257,17 +257,6 @@ runs:
       run: echo digger run ${{ inputs.id }}
       shell: bash
 
-    - uses: actions/checkout@08eba0b27e820071cde6df949e0beb9ba4906955 # v4.3.0
-      with:
-        clean: false
-        repository: ${{ env.ACTION_REPO }}
-        ref: ${{ env.ACTION_REF }}
-        path: digger-action-repo
-      env:
-        ACTION_REPO: ${{ github.action_repository }}
-        ACTION_REF: ${{ github.action_ref }}
-      if: ${{ inputs.digger-version == '' }}
-
     - name: Get release tag
       id: get_release_tag
       shell: bash
